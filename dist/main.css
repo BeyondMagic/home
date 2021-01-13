@@ -1,0 +1,13 @@
+main {
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(circle at center, black, #08081C 98%, #14132B); }
+
+body, .clean {
+  margin: 0;
+  padding: 0; }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }

@@ -1,0 +1,30 @@
+{
+  "name": "node-sass-pug",
+  "version": "0.0.1",
+  "author": "Reid Mitchell",
+  "license": "MIT",
+  "main": "dist/main.min.css",
+  "unpkg": "dist/main.min.css",
+  "description": "Small Node starter project using Sass and Pug",
+  "scripts": {
+    "serve": "live-server --watch=\"dist/*.css,dist/*.html\" --mount=/:dist",
+    "build:scss-to-css": "node-sass src -o dist",
+    "build:pug-to-html": "pug src -o dist --pretty",
+    "build:post-css": "postcss --no-map --use autoprefixer cssnano -d dist --ext .min.css dist/*.css",
+    "build": "del-cli dist/* && npm run build:scss-to-css && npm run build:post-css && npm run build:pug-to-html",
+    "watch:scss-to-css": "node-sass --watch src -o dist",
+    "watch:pug-to-html": "pug src -o dist --watch",
+    "watch": "npm run build && concurrently \"npm run serve\" \"npm run watch:scss-to-css\" \"npm run watch:pug-to-html\"",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "concurrently": "^3.5.1",
+    "cssnano": "^3.10.0",
+    "del-cli": "^1.1.0",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.7.2",
+    "postcss-cli": "^4.1.1",
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}
