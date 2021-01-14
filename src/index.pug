@@ -1,8 +1,17 @@
 doctype html
 
+include links.pug
+
 html
   head
-    title ☁️  Home
-    link(rel='stylesheet' type='text/css' href='main.css')
+    title ☁️ 
+    link(rel='stylesheet' type='text/css' href='/main.css')
   body
     main.center.clean
+      .background
+      .head
+        h1 Hello, astronaut! !
+      .fixes 
+        each l in ['social', 'coding', 'blogs', 'design', 'school', 'dreams']
+          n
+          .links(class=`${l}`)

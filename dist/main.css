@@ -1,7 +1,84 @@
+@keyframes slide-in {
+  from {
+    margin-left: 100%;
+    width: 300%; }
+  70% {
+    margin-left: 90%;
+    width: 150%; }
+  to {
+    margin-left: 0%;
+    width: 100%; } }
+
+@font-face {
+  font-family: bbkk;
+  font-weight: 300;
+  font-style: normal;
+  font-display: auto;
+  src: url(https://use.typekit.net/af/1416a9/00000000000000007735a15a/30/l?subset_id=1&fvd=n3&v=3) format("woff2"), url(https://use.typekit.net/af/1416a9/00000000000000007735a15a/30/d?subset_id=1&fvd=n3&v=3) format("woff"), url(https://use.typekit.net/af/1416a9/00000000000000007735a15a/30/a?subset_id=1&fvd=n3&v=3) format("opentype"); }
+
+@font-face {
+  font-family: bbkk;
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url(https://use.typekit.net/af/5e6988/00000000000000007735a163/30/l?subset_id=1&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/5e6988/00000000000000007735a163/30/d?subset_id=1&fvd=n4&v=3) format("woff"), url(https://use.typekit.net/af/5e6988/00000000000000007735a163/30/a?subset_id=1&fvd=n4&v=3) format("opentype"); }
+
+@font-face {
+  font-family: bbkk;
+  font-weight: 600;
+  font-style: normal;
+  font-display: auto;
+  src: url(https://use.typekit.net/af/61b4ba/00000000000000007735a167/30/l?subset_id=1&fvd=n6&v=3) format("woff2"), url(https://use.typekit.net/af/61b4ba/00000000000000007735a167/30/d?subset_id=1&fvd=n6&v=3) format("woff"), url(https://use.typekit.net/af/61b4ba/00000000000000007735a167/30/a?subset_id=1&fvd=n6&v=3) format("opentype"); }
+
+@font-face {
+  font-family: bbkk;
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+  src: url(https://use.typekit.net/af/09d302/00000000000000007735a14e/30/l?subset_id=1&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/09d302/00000000000000007735a14e/30/d?subset_id=1&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/09d302/00000000000000007735a14e/30/a?subset_id=1&fvd=n7&v=3) format("opentype"); }
+
+@font-face {
+  font-family: gmsj;
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+  src: url(https://use.typekit.net/af/e0617b/000000000000000077359943/30/l?subset_id=1&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/e0617b/000000000000000077359943/30/d?subset_id=1&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/e0617b/000000000000000077359943/30/a?subset_id=1&fvd=n7&v=3) format("opentype"); }
+
+@font-face {
+  font-family: vcsm;
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  src: url(https://use.typekit.net/af/d45b9a/000000000000000077359577/30/l?subset_id=1&fvd=n4&v=3) format("woff2"), url(https://use.typekit.net/af/d45b9a/000000000000000077359577/30/d?subset_id=1&fvd=n4&v=3) format("woff"), url(https://use.typekit.net/af/d45b9a/000000000000000077359577/30/a?subset_id=1&fvd=n4&v=3) format("opentype"); }
+
+@font-face {
+  font-family: vcsm;
+  font-weight: 600;
+  font-style: normal;
+  font-display: auto;
+  src: url(https://use.typekit.net/af/e4b1a9/000000000000000077359571/30/l?subset_id=1&fvd=n6&v=3) format("woff2"), url(https://use.typekit.net/af/e4b1a9/000000000000000077359571/30/d?subset_id=1&fvd=n6&v=3) format("woff"), url(https://use.typekit.net/af/e4b1a9/000000000000000077359571/30/a?subset_id=1&fvd=n6&v=3) format("opentype"); }
+
+@font-face {
+  font-family: vcsm;
+  font-weight: 700;
+  font-style: normal;
+  font-display: auto;
+  src: url(https://use.typekit.net/af/98e3f6/000000000000000077359562/30/l?subset_id=1&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/98e3f6/000000000000000077359562/30/d?subset_id=1&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/98e3f6/000000000000000077359562/30/a?subset_id=1&fvd=n7&v=3) format("opentype"); }
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/bg.png");
+  background-repeat: repeat;
+  background-size: 240px 256px;
+  background-position: center;
+  filter: hue-rotate(300deg);
+  z-index: -1; }
+
 main {
   width: 100vw;
-  height: 100vh;
-  background-image: radial-gradient(circle at center, black, #08081C 98%, #14132B); }
+  height: 100vh; }
 
 body, .clean {
   margin: 0;
@@ -11,3 +88,16 @@ body, .clean {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+.head {
+  position: absolute;
+  background-image: white;
+  height: 20%;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  box-shadow: -2px -2px 16px 4px black; }
+  .head h1 {
+    margin: 0;
+    padding: 0;
+    color: white; }
