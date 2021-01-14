@@ -1,17 +1,16 @@
 doctype html
 
-include links.pug
-
 html
   head
     title ☁️ 
     link(rel='stylesheet' type='text/css' href='/main.css')
+    script
+      include ../data/links.js
   body
     main.center.clean
       .background
       .head
-        h1 Hello, astronaut! !
+        h1 Hello, astronaut!
       .fixes 
-        each l in ['social', 'coding', 'blogs', 'design', 'school', 'dreams']
-          n
+        each l in Object.keys(links)
           .links(class=`${l}`)
