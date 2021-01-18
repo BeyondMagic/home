@@ -9,23 +9,19 @@
   "scripts": {
     "serve": "live-server --watch=\"dist/*.css,dist/*.html\" --mount=/:dist",
 
-
-    "build:pug-to-html": "pug -O data/links.json src/index.pug -o dist --pretty",
-    "watch:pug-to-html": "pug -O data/links.json src/index.pug -o dist --watch",
-
+    "build:pug-to-html": "pug -O distdata/all.json src/index.pug -o dist --pretty",
+    "watch:pug-to-html": "pug -O distdata/all.json src/index.pug -o dist --watch",
 
     "build:scss-to-css": "node-sass src/sass/main.sass -o dist",
     "watch:scss-to-css": "node-sass --watch src/sass/main.sass -o dist",
+    
+    "watch:json-to-one": "jsonmerge data/*.json > distdata/all.json",
 
     "build:post-css": "postcss --no-map --use autoprefixer cssnano -d dist --ext .min.css dist/*.css",
 
-
     "build": "del-cli dist/* && npm run build:scss-to-css && npm run build:post-css && npm run build:pug-to-html",
-   
 
-    "dev": "npm run build && concurrently \"npm run serve\" \"npm run watch:scss-to-css\" \"npm run watch:pug-to-html\"",
-
-
+    "dev": "npm run build && concurrently \"npm run watch:json-to-one\" \"npm run serve\" \"npm run watch:scss-to-css\" \"npm run watch:pug-to-html\"",
     "prepublish": "npm run build"
   },
   "devDependencies": {
@@ -36,6 +32,7 @@
     "live-server": "^1.2.0",
     "node-sass": "^4.7.2",
     "postcss-cli": "^4.1.1",
+    "jsonmerge-cli": "^1.0.0",
     "pug-cli": "^1.0.0-alpha6"
   }
 }

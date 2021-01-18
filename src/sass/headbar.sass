@@ -3,15 +3,12 @@
   height: 4%
   top: 0.75rem
   z-index: 1
-  font-family: bbkk
-  font-size: .55rem
-  font-weight: 700
+  font-family: bbkk 
   text-shadow: -2px 2px 4px $shadow-color-text
 
   &.left
     width: 65%
     left: 0.75rem
-
   &.right
     width: calc(35% - 6 * 0.75rem)
     right: 0.75rem
@@ -23,9 +20,14 @@
     font-size: 1.05rem
     display: flex
     flex-direction: row
+    font-weight: 700
+    width: calc(100% - 4rem)
+    align-items: center
 
     .msg
+      margin-left: 0.25rem
       font-weight: 400
-      text-overflow: ellipsis
       overflow: hidden
-      width: 100%
+      text-overflow: ellipsis
+      white-space: nowrap
+
