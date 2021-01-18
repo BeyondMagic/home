@@ -1,0 +1,23 @@
+.ui
+  display: flex 
+  align-items: center
+  border: 0.5rem solid $border-color-ui
+  box-shadow: 2px 2px 8px 1px $shadow-color-ui
+  //background: #191919
+  
+  &::after
+    content: 'O'
+    position: absolute
+    right: 1rem
+    font-size: 1rem
+    color: $border-color-ui
+
+    
+
+  &.left
+    text-align: left
+  &.middle
+    text-align: center
+  &.right
+    text-align: right
+    

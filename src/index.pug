@@ -1,5 +1,8 @@
 doctype html
 
+- const date = new Date();
+- const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+
 html
   head
     title ☁️ 
@@ -7,8 +10,13 @@ html
   body
     main.center.clean
       .background
-      .head
-        h1 Hello, astronaut!
+      .head.ui.left
+        .text Message:
+          .msg Hello, astronaut!lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
+      .head.ui.right
+        - const nowday = date.toLocaleString('en-gb', options)
+        .text Date:
+          .msg=nowday
       .fixes 
         each l in Object.keys(links)
           .links(class=`${l}`)
