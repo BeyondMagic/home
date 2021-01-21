@@ -5,11 +5,27 @@
   background-image: url("../img/bg.png")
   background-position: center
   z-index: -1
-  transition: filter .125s linear
+  //transition: filter .125s linear
 
 main
   width: 100vw
   height: 100vh
+
+  //overflow: hidden
+
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: .15fr 1fr .15fr
+
+  .headbar
+    display: grid
+    grid-template-columns: 80vw 20vw;
+    padding: 1.5rem 0
+    
+  .section-links
+
+  .bottombar
+  
 
   //&:hover > .background
     filter: brightness(55%)

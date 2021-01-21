@@ -5,18 +5,35 @@ doctype html
 
 html
   head
-    title ☁️ 
+    title ☁️ Our Home
+
+    // style...
     link(rel='stylesheet' type='text/css' href='/main.css')
   body
-    main.center.clean
+    main.clean
+      // background : default.sass
       .background
-      .head.ui.left
-        .text Message:
-          .msg=quotes[0][0]
-      .head.ui.right
-        - const nowday = date.toLocaleString('en-gb', options)
-        .text Date:
-          .msg=nowday
-      .fixes 
+
+      .headbar
+        // quote : headbar.sass
+        .head.ui.left
+          .text Message:
+            .msg=quotes[0][0]
+        // date : headbar.sass
+      
+        .head.ui.right
+          // british english date
+          - const nowday = date.toLocaleString('en-gb', options)
+          .text Date:
+            .msg=nowday
+        
+      // links
+      .section-links
+        | l
         each l in Object.keys(links)
           .links(class=`${l}`)
+
+      // city
+      .bottombar
+        .ui.city.left-1
+          | l
