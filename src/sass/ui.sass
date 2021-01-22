@@ -2,18 +2,36 @@
   display: flex 
   align-items: center
   background: $background-ui
-  border: 0.5rem solid $border-color-ui
+  border-radius: 4px
   box-shadow: 2px 2px 8px 1px $shadow-color-ui
-  
-  //&::after
+  font-family: bbkk
+  text-shadow: -2px 2px 4px $shadow-color-text
+
+  .text
+    margin: 0 2.5rem 0 1rem
+    padding: 0
+    color: $text-ui
+    font-size: 1.05rem
+    display: flex
+    flex-direction: row
+    font-weight: 700
+    width: calc(100% - 4rem)
+    align-items: center
+
+    .msg
+      margin-left: 0.25rem
+      font-weight: 400
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+ 
+
+  &::after
     content: 'O'
-    //position: absolute
-    //margin-right: 1rem
+    padding-right: 1.75rem
     font-size: 1rem
     color: $text-ui
-    opacity: 0.75
-
-    
+    opacity: .75
 
   &.left
     text-align: left
@@ -21,4 +39,5 @@
     text-align: center
   &.right
     text-align: right
-    
+
+   
