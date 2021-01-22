@@ -1,1 +1,25 @@
-<!DOCTYPE html><html><head><title>☁️ Our Home</title><!-- style...--><link rel="stylesheet" type="text/css" href="/main.css"></head><body><main class="clean"><!-- background : default.sass--><div class="background"></div><div class="headbar"><!-- quote : headbar.sass--><div class="head ui left"><div class="text">Message:<div class="msg">Are you a man perpetually looking back at what he's lost? Or a man looking forward to what he might become?</div></div></div><!-- date : headbar.sass--><div class="head ui right"><!-- british english date--><div class="text">Date:<div class="msg">Thu, 21 Jan 2021</div></div></div></div><!-- links--><div class="section-links">l<div class="links blogs"></div><div class="links school"></div><div class="links fun"></div><div class="links social"></div><div class="links coding"></div><div class="links design"></div><div class="links dreams"></div></div><!-- city--><div class="bottombar"><div class="ui city left-1">l</div></div></main></body></html>
+<!DOCTYPE html><html><head><title>☁️ Our Home</title><!-- style...--><link rel="stylesheet" type="text/css" href="/main.css"></head><body><main class="clean"><!-- background : default.sass--><div class="background"></div><div class="headbar"><!-- quote : headbar.sass--><div class="head ui"><div class="text">Message:<div class="msg">Are you a man perpetually looking back at what he's lost? Or a man looking forward to what he might become?</div></div></div><!-- date : headbar.sass--><div class="head ui"><!-- british english date--><div class="text">Date:<div class="msg" id="nowaday"></div></div></div></div><!-- links--><div class="section-links">l<div class="links blogs"></div><div class="links school"></div><div class="links fun"></div><div class="links social"></div><div class="links coding"></div><div class="links design"></div><div class="links dreams"></div></div><!-- city--><div class="bottombar"><div class="ui location bottom"><div class="text">Local:<div class="msg">Somewhere in Hell</div></div></div><div class="ui new-quote bottom button"><div class="text">N</div></div><div class="ui time bottom"><div class="text">Time:<div class="msg" id="time"></div></div></div><!-- last clicked ui--></div></main><!-- time script--><script>// load time in the screen
+const startTime = () => {
+  const date = new Date();
+  const [h,m,s] = [date.getHours(), date.getMinutes(), date.getSeconds()].map(e => formatTime(e));
+  document.getElementById('time').innerHTML = `${h}:${m}:${s}`;
+  setTimeout('startTime()', 500);
+}
+
+// format time for better output (with zeros)
+const formatTime = i => {
+  if (i < 10) i = "0" + i;
+  return i;
+}
+
+// date
+const loadDate = () => {
+  const date = new Date();
+  const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+  document.getElementById('nowaday').innerHTML = date.toLocaleString('en-gb', options);
+
+  startTime()
+}
+
+loadDate()
+</script></body></html>

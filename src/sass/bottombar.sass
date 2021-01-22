@@ -2,6 +2,20 @@
   margin: 0 1.5rem
   max-height: 1.5rem
   min-width: 10rem
+  &::after
+    padding-bottom: 0.1rem
 
+  // our uis
   &.location
     background: $bottombar-location
+    &::after, .text
+      color: $bottombar-location-colour
+  &.time
+    background: $bottombar-time-bg
+    &::after, .text
+      color: $bottombar-time-colour
+  &.new-quote
+    background: $bottombar-newquote-bg
+    .text
+      color: $bottombar-newquote-colour  
+      

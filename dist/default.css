@@ -10,11 +10,16 @@ main {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: .15fr 1fr .15fr; }
+  grid-template-columns: 100vw;
+  grid-template-rows: .15fr 1fr .1fr; }
   main .headbar {
     display: grid;
-    grid-template-columns: 80vw 20vw;
+    grid-template-columns: repeat(auto-fit, minmax(0, min-content));
+    justify-content: space-between;
+    padding: 1.5rem 0; }
+  main .bottombar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, min-content));
     padding: 1.5rem 0; }
 
 body, .clean {

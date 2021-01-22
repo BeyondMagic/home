@@ -1,4 +1,7 @@
 {
+    "config": {
+        "location": "Somewhere in Hell"
+    },
     "links": {
         "blogs": [
             [
@@ -24,6 +27,10 @@
             [
                 "Hector Garcia",
                 "https://ageekinjapan.com/"
+            ],
+            [
+                "Run the Novel",
+                "https://malapertpress.wordpress.com/"
             ],
             [
                 "Orion Math",

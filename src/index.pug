@@ -1,12 +1,8 @@
 doctype html
 
-- const date = new Date();
-- const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
-
 html
   head
     title ☁️ Our Home
-
     // style...
     link(rel='stylesheet' type='text/css' href='/main.css')
   body
@@ -16,24 +12,32 @@ html
 
       .headbar
         // quote : headbar.sass
-        .head.ui.left
+        .head.ui
           .text Message:
             .msg=quotes[0][0]
         // date : headbar.sass
       
-        .head.ui.right
+        .head.ui
           // british english date
-          - const nowday = date.toLocaleString('en-gb', options)
           .text Date:
-            .msg=nowday
+            #nowaday.msg=nowday
         
       // links
       .section-links
         | l
         each l in Object.keys(links)
           .links(class=`${l}`)
-
       // city
       .bottombar
-        .ui.city.left-1
-          | l
+        .ui.location.bottom
+          .text Local:
+            .msg=config.location
+        .ui.new-quote.bottom.button
+          .text N
+        .ui.time.bottom
+          .text Time:
+            #time.msg
+        // last clicked ui
+    // time script
+    script
+      include scripts/time.js
