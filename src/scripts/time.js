@@ -16,9 +16,12 @@ const formatTime = i => {
 const loadDate = () => {
   const date = new Date();
   const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
-  document.getElementById('nowaday').innerHTML = date.toLocaleString('en-gb', options);
-
-  startTime()
+  return date.toLocaleString('en-gb', options);
 }
 
-loadDate()
+(function (){
+  startTime();
+  document.getElementById('nowaday').innerHTML = TIME_NOW_COMPARE = loadDate();
+
+})();
+

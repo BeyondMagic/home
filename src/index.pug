@@ -13,14 +13,16 @@ html
       .headbar
         // quote : headbar.sass
         .head.ui
-          .text Message:
-            .msg=quotes[0][0]
+          .text
+            .alt Message:
+            #nowquote.msg
         // date : headbar.sass
       
         .head.ui
           // british english date
-          .text Date:
-            #nowaday.msg=nowday
+          .text
+            .alt Date:
+            #nowaday.msg
         
       // links
       .section-links
@@ -30,14 +32,30 @@ html
       // city
       .bottombar
         .ui.location.bottom
-          .text Local:
+          .text
+            .alt Local:
             .msg=config.location
-        .ui.new-quote.bottom.button
-          .text N
         .ui.time.bottom
-          .text Time:
+          .text
+            .alt Time:
             #time.msg
+        // if author exists
+        #author-container.ui.time.bottom
+          .text
+            .alt Author:
+            #nowauthor.msg
+        // if source exists
+        #source-container.ui.time.bottom
+          .text
+            .alt Source:
+            #nowsource.msg
         // last clicked ui
     // time script
     script
+      include scripts/vars.js
       include scripts/time.js
+      each l, index in quotes
+        | qts.push([]);
+        each o in l
+          | qts[#{index}].push("#{o}");
+      include scripts/quotes.js
