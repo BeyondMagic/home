@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>☁️ Our Home</title><!-- style...--><link rel="stylesheet" type="text/css" href="/main.css"></head><body><main class="clean"><!-- background : default.sass--><div class="background"></div><div class="headbar"><!-- quote : headbar.sass--><div class="head ui"><div class="text"><div class="alt">Message:</div><div class="msg" id="nowquote"></div></div></div><!-- date : headbar.sass--><div class="head ui"><!-- british english date--><div class="text"><div class="alt">Date:</div><div class="msg" id="nowaday"></div></div></div></div><!-- links--><div class="section-links">l<div class="links blogs"></div><div class="links social"></div><div class="links coding"></div><div class="links design"></div></div><!-- city--><div class="bottombar"><div class="ui location bottom"><div class="text"><div class="alt">Local:</div><div class="msg">Somewhere in Hell</div></div></div><div class="ui time bottom"><div class="text"><div class="alt">Time:</div><div class="msg" id="time"></div></div></div><!-- if author exists--><div class="ui time bottom" id="author-container"><div class="text"><div class="alt">Author:</div><div class="msg" id="nowauthor"></div></div></div><!-- if source exists--><div class="ui time bottom" id="source-container"><div class="text"><div class="alt">Source:</div><div class="msg" id="nowsource"></div></div></div><!-- last clicked ui--></div></main><!-- time script--><script>let qts = [], // all quotes loaded from data/quotes.json
+<!DOCTYPE html><html><head><title>☁️ Our Home</title><!-- style...--><link rel="stylesheet" type="text/css" href="/main.css"></head><body><main class="clean"><!-- background : default.sass--><div class="background"></div><div class="headbar"><!-- quote : headbar.sass--><div class="head ui"><div class="text"><div class="alt">Message:</div><div class="msg" id="nowquote"></div></div></div><!-- date : headbar.sass--><div class="head ui"><!-- british english date--><div class="text marquee"><div class="alt">Date:</div><div class="msg" id="nowaday"></div></div></div></div><!-- links--><div class="section-links">l<div class="links blogs"></div><div class="links social"></div><div class="links coding"></div><div class="links design"></div></div><!-- city--><div class="bottombar"><div class="ui location bottom"><div class="text"><div class="alt">Local:</div><div class="msg">Somewhere in Hell</div></div></div><div class="ui time bottom"><div class="text"><div class="alt">Time:</div><div class="msg" id="time"></div></div></div><!-- if author exists--><div class="ui time bottom" id="author-container"><div class="text"><div class="alt">Author:</div><div class="msg" id="nowauthor"></div></div></div><!-- if source exists--><div class="ui time bottom" id="source-container"><div class="text"><div class="alt">Source:</div><div class="msg" id="nowsource"></div></div></div><!-- last clicked ui--></div></main><!-- time script--><script>let qts = [], // all quotes loaded from data/quotes.json
 TIME_NOW_COMPARE; // string to compare with the last time it loaded a quote (1 per day)
 // load time in the screen
 const startTime = () => {
@@ -27,9 +27,9 @@ const loadDate = () => {
 
 })();
 
-qts.push([]);qts[0].push("Are you a man perpetually looking back at what he's lost? Or a man looking forward to what he might become?");qts[0].push("Nightwing");qts[0].push("Young Justice");qts.push([]);qts[1].push("lol");(function (){
+qts.push([]);qts[0].push("Are you a man perpetually looking back at what he's lost? Or a man looking forward to what he might become?");qts[0].push("Nightwing");qts[0].push("Young Justice");qts.push([]);qts[1].push("lo");(function (){
 
-  if (TIME_NOW_COMPARE === localStorage['time-old-quote']) {
+  if (TIME_NOW_COMPARE !== localStorage['time-old-quote']) {
     const quote = qts[qts.length * Math.random() | 0];
     localStorage['time-old-quote'] = loadDate(); // old quote to verify in next load page
 
@@ -42,25 +42,22 @@ qts.push([]);qts[0].push("Are you a man perpetually looking back at what he's lo
     // new me, baby
   }
   else
-    console.log('No quotes loaded! Have a good day! You got this!')
+    console.log('No quotes loaded! Have a good day! You got this!');
   
   // quote
   document.getElementById('nowquote').innerHTML = localStorage['old-quote'];
   
   // author ( if there is )
   if (localStorage['old-author'] !== 'undefined')
-    document.getElementById('nowauthor').innerHTML =localStorage['old-author']
+    document.getElementById('nowauthor').innerHTML = localStorage['old-author']
   else
     document.getElementById('author-container').remove();
   
   // source ( if there is )
   if (localStorage['old-source'] !== 'undefined') 
-    document.getElementById('nowsource').innerHTML = localStorage['old-source'];
+    document.getElementById('nowsource').innerHTML = localStorage['old-source']
   else
     document.getElementById('source-container').remove();
-
-
-
 
 })();
 </script></body></html>

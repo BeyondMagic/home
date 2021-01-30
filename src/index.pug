@@ -20,7 +20,7 @@ html
       
         .head.ui
           // british english date
-          .text
+          .text.marquee
             .alt Date:
             #nowaday.msg
         
@@ -54,8 +54,10 @@ html
     script
       include scripts/vars.js
       include scripts/time.js
+
       each l, index in quotes
         | qts.push([]);
         each o in l
           | qts[#{index}].push("#{o}");
+
       include scripts/quotes.js

@@ -54,16 +54,11 @@
   font-display: auto;
   src: url(https://use.typekit.net/af/98e3f6/000000000000000077359562/30/l?subset_id=1&fvd=n7&v=3) format("woff2"), url(https://use.typekit.net/af/98e3f6/000000000000000077359562/30/d?subset_id=1&fvd=n7&v=3) format("woff"), url(https://use.typekit.net/af/98e3f6/000000000000000077359562/30/a?subset_id=1&fvd=n7&v=3) format("opentype"); }
 
-@keyframes slide-in {
-  from {
-    margin-left: 100%;
-    width: 300%; }
-  70% {
-    margin-left: 90%;
-    width: 150%; }
-  to {
-    margin-left: 0%;
-    width: 100%; } }
+@keyframes slide-text {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(-100%); } }
 
 @media only screen and (max-width: 750px) {
   .alt {
@@ -81,14 +76,6 @@
   padding-bottom: 0.15rem; }
   .ui:hover {
     filter: brightness(125%); }
-  .ui.button {
-    min-width: 1.5rem;
-    max-width: 1.5rem;
-    cursor: pointer; }
-    .ui.button .text {
-      margin: 0 0 0 0.5rem; }
-      .ui.button .text .msg {
-        margin-left: 0; }
   .ui .text {
     margin: 0 3rem 0 1rem;
     padding: 0;
@@ -98,7 +85,8 @@
     flex-direction: row;
     font-weight: 700;
     width: calc(100% - 4rem);
-    align-items: center; }
+    align-items: center;
+    overflow: hidden; }
     .ui .text .msg {
       margin-left: 0.25rem;
       font-weight: 400;
@@ -118,6 +106,13 @@
     text-align: center; }
   .ui.right {
     text-align: right; }
+
+.marquee {
+  overflow: hidden; }
+  .marquee .msg {
+    text-align: center;
+    transform: translateX(100%);
+    animation: slide-text 10s linear infinite; }
 
 .background {
   position: absolute;

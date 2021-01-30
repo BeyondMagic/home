@@ -12,16 +12,6 @@
   &:hover
     filter: brightness(125%)
 
-  &.button
-    min-width: 1.5rem
-    max-width: 1.5rem
-    cursor: pointer
-    
-    .text
-      margin: 0 0 0 0.5rem
-      .msg
-        margin-left: 0
-
   .text
     margin: 0 3rem 0 1rem
     padding: 0
@@ -32,6 +22,7 @@
     font-weight: 700
     width: calc(100% - 4rem)
     align-items: center
+    overflow: hidden
 
     .msg
       margin-left: 0.25rem
@@ -54,3 +45,11 @@
     text-align: center
   &.right
     text-align: right
+
+.marquee
+  overflow: hidden
+  .msg
+    text-align: center
+    transform: translateX(100%)
+    animation: slide-text 10s linear infinite
+
